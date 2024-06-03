@@ -1,14 +1,13 @@
-from os import path
-from setuptools import find_packages, setup, Extension
-from setuptools.command.build_ext import build_ext
-from pathlib import Path
 import os
 import subprocess
 import sys
+from setuptools import find_packages, setup, Extension
+from setuptools.command.build_ext import build_ext
+from pathlib import Path
 
 # read the version number for the project
-DIR_PATH = path.dirname(path.realpath(__file__))
-VERSION_FILE = path.join(DIR_PATH, 'VERSION')
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+VERSION_FILE = os.path.join(DIR_PATH, 'VERSION')
 
 try:
     __version__ = open(VERSION_FILE).read().strip()
@@ -61,8 +60,6 @@ setup(
     maintainer='Sahib Dhanjal',
     zip_safe=False,
     ext_modules=[CMakeExtension("myapp_cmake")],
-    packages=find_packages(exclude=[]),
-    install_requires=[],
     package_data={'myapp':['./../VERSION']},
     cmdclass={"build_ext": CMakeBuild},
 )

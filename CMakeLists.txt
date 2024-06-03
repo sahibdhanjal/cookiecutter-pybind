@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 2.6)
 
-set(CMAKE_C_COMPILER /usr/bin/gcc)
-set(CMAKE_CXX_COMPILER /usr/bin/g++)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS ON)
 
@@ -15,7 +13,8 @@ add_subdirectory(third-party/pybind11)
 
 # add all functions you want for compilation as follows
 pybind11_add_module(myapp
-    src/header_impl.cpp
+    src/interface.cpp
+    src/math.cpp
 )
 
 # add the include directory to pull headers for compilation
