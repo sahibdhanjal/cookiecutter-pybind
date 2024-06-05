@@ -47,5 +47,6 @@ This instructs `cmake` to build a `Debug` version of the library. If not specifi
 ## Learning More
 For a deeper understanding of PyBind11 and calling C/C++ from Python, refer to this article:
 - [Beyond Python's Limits: Calling the C++ Cavalry with PyBind11](https://medium.com/@sahibdhanjal/beyond-pythons-limits-calling-the-c-cavalry-with-pybind11-377b0b429a81)
+- [Debugging PyBind11 Projects in VSCode](https://medium.com/@sahibdhanjal/debugging-pybind11-projects-in-vscode-84b3b97edbf)
 
 The article clarifies the steps, explains benefits of submodules, and removes the unnecessary informality.
