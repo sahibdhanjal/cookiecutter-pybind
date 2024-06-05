@@ -1,8 +1,12 @@
+from __future__ import annotations
+
 import myapp
 
-# Python based matrix interface which can be used to convert a dummymatrix defined in
-# Python to one in C++ using the c_obj() function. This is not necessary to implement 
-# and is shown here primarily to show the use of this cookiecutter
+
+# Python based matrix interface which can be used to convert a DummyMatrix
+# defined in Python to one in C++ using a c_obj. This is not necessary to
+# implement and is shown here primarily to showcase the difference in
+# performance of C++ library vs a Python library
 class PyDummyMatrix:
     def __init__(self, data=[], type=myapp.DummyMatrixType.UNKNOWN):
         self._data = data
@@ -38,8 +42,12 @@ class PyDummyMatrix:
     def __str__(self):
         out = ""
         for i in range(self._rows):
-            out += ' '.join(str(self._data[i][x]) for x in range(self._cols)) + '\n'
+            out += (
+                " ".join(str(self._data[i][x]) for x in range(self._cols))
+                + "\n"
+            )
         return out
+
 
 def Add(a, b):
     if a.rows == b.rows and a.cols == b.cols:
@@ -51,6 +59,7 @@ def Add(a, b):
     print("Failed to add both matrices")
     return PyDummyMatrix()
 
+
 def Subtract(a, b):
     if a.rows == b.rows and a.cols == b.cols:
         result = [[0 for _ in range(a.cols)] for _ in range(a.rows)]
@@ -60,6 +69,7 @@ def Subtract(a, b):
         return PyDummyMatrix(result)
     print("Failed to subtract both matrices")
     return PyDummyMatrix()
+
 
 def Multiply(a, b):
     if a.cols == b.rows:

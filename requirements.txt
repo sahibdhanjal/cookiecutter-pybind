@@ -1,1 +1,12 @@
+flake8
+mock
+mypy
+mypy-extensions
 numpy
+pip
+pre-commit
+pylint
+pytest
+setuptools
+virtualenv
+yapf
