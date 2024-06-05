@@ -1,23 +1,25 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
       "name": "Debug Python",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/myapp/main.py",
+      "program": "${workspaceFolder}/myapp/main.py",      // update this location
       "console": "integratedTerminal",
-      "args": []
+      "args": [
+        // other arguments that you want to use when running your code
+      ]
     },
     {
       "name": "Debug C++",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/.venv/bin/python",
-      "args": ["${workspaceFolder}/myapp/main.py"],
+      "program": "${workspaceFolder}/.env/bin/python",      // update this location
+      "args": [
+        "${workspaceFolder}/myapp/main.py",                 // update this location
+        // other arguments that you want to use when running your code
+      ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
